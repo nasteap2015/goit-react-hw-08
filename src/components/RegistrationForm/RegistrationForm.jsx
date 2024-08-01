@@ -1,9 +1,10 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useId } from "react";
 import * as Yup from "yup";
-import css from "./LoginForm.module.css"
+import css from "./RegistrationForm.module.css";
+import { register } from '../../redux/auth/operations';
 import { useDispatch } from "react-redux";
-import { login } from '../../redux/auth/operations';
+
 
 const initialValues = {
     name: '',
@@ -12,31 +13,36 @@ const initialValues = {
 };
 
 const LoginSchema = Yup.object().shape({
+        name: Yup.string().required("Required"),
         email: Yup.string().email("Should be an email").required("Required"),
         password: Yup.string().min(7, "Too short").required("Required"),
     });
 
-const LoginForm = () => {
-    const emailFieldId = useId();
-    const passwordFirldId = useId(); 
+const RegistrationForm = () => {
     const dispatch = useDispatch();
+    const emailFieldId = useId();
+    const passwordFieldId = useId(); 
+    const usernameFieldId = useId();
 
     const handleSubmit = (values, actions) => {
-        dispatch(login(values));
+        dispatch(register(values));
         actions.resetForm();
-    };
+    }
 
     return (
         <Formik initialValues={initialValues} validationSchema={LoginSchema} onSubmit={handleSubmit}>
             <Form>
-                <div className={css.loginForm}>
+                <div className={css.registerForm}>
+                    <label htmlFor={usernameFieldId}>Username</label>
+                    <Field type="text" name="name" id={usernameFieldId} />
+                    <ErrorMessage name="name" component="span"/>
                     <label htmlFor={emailFieldId}>Email</label>
-                    <Field type="text" name="email" id={emailFieldId} />
+                    <Field type="email" name="email" id={emailFieldId} />
                     <ErrorMessage name="email" component="span"/>
-                    <label htmlFor={passwordFirldId}>Password</label>
-                    <Field type="password" name="password" id={passwordFirldId} />
+                    <label htmlFor={passwordFieldId}>Password</label>
+                    <Field type="password" name="password" id={passwordFieldId} />
                     <ErrorMessage name="password" component="span"/>
-                    <button type="submit" className={css.button}>Log In</button>
+                    <button type="submit" className={css.button}>Register</button>
                 </div>
             </Form>
         </Formik>
@@ -44,4 +50,4 @@ const LoginForm = () => {
 
 }
 
-export default LoginForm;
+export default RegistrationForm;

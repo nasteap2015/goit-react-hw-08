@@ -6,6 +6,7 @@ import AppBar from '../AppBar/AppBar';
 const Homepage = lazy(() => import('../../pages/HomePage/HomePage'));
 const ContactsPage = lazy(() => import('../../pages/ContactsPage/ContactsPage'));
 const LoginPage = lazy(() => import('../../pages/LoginPage/LoginPage'));
+const RegistrationPage = lazy(() => import('../../pages/RegistrationPage/RegistrationPage'));
 
 function App() {
 
@@ -16,7 +17,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/contacts" element={<ContactsPage />} />
-          <Route path="/login" element={<LoginPage/>}/>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegistrationPage/>} />
         </Routes>
       </Suspense>
     </div>

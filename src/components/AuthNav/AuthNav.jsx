@@ -4,8 +4,8 @@ import css from './AuthNav.module.css';
 const AuthNav = () => {
     return (
         <div className={css.authNavigation}>
-            <Link>Register</Link>
-            <Link>Login</Link>
+            <Link to="/register">Register</Link>
+            <Link to="/login">Login</Link>
         </div>
     )
 };
