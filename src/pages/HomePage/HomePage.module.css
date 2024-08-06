@@ -1,0 +1,27 @@
+.homePage{
+    padding: 12px;
+}
+
+.homePageTitle{
+    margin-bottom: 8px;
+}
+
+.homePageSecondTitle{
+    margin-bottom: 8px;
+}
+
+.homePageText{
+    margin-bottom: 8px;
+}
+
+.homePageListItem{
+    margin-bottom: 8px;
+}
+
+.homePageListSpan{
+    font-weight: 600;
+}
+
+.homePageList{
+    margin-bottom: 16px;
+}

@@ -3,9 +3,14 @@
     flex-direction: column;
     gap: 8px;
     width: 350px;
+    padding: 12px;
 }
 
 .button{
+    width: 70px;
     text-align: center;
-    width: 75px
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #90EE90;
 }

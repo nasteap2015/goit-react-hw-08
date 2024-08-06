@@ -18,6 +18,11 @@
 }
 
 .button{
-    width: 90px;
     align-self: center;
+    width: 100px;
+    text-align: center;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #90EE90;
 }

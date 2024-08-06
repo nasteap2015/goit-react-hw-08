@@ -4,13 +4,12 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: #000;
+  font-size: medium;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 15px;
 }
 
 /* Стилі для обнулення верхніх відступів у елементів */
@@ -52,9 +51,14 @@ address {
 button {
   font-family: inherit;
   color: currentColor;
+  cursor: pointer;
 }
 
 /*Глобальні стилі для полів вводу*/
 input {
   font-family: inherit;
+}
+
+body {
+  margin: 0;
 }

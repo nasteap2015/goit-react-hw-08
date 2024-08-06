@@ -17,7 +17,7 @@ function ContactsPage() {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className={css.contactsPage}>
       <h1 className={css.title}>Phonebook</h1>
       <ContactForm />
       <SearchBox />
